@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Editar Produto</title>
+    <link rel="stylesheet" th:href="@{/styles/style.css}" href="/styles/style.css">
+</head>
+<body>
+  <header><h1 th:text="${produto.id} != null ? 'Editar Produto' : 'Novo Produto'">Form</h1><a th:href="@{/produtos}">Voltar</a></header>
+  <main>
+    <form th:action="@{/produtos/salvar}" th:object="${produto}" method="post">
+      <input type="hidden" th:field="*{id}" />
+      <label>Nome: <input type="text" th:field="*{nome}" /></label><br/>
+      <label>Preço: <input type="number" step="0.01" th:field="*{preco}" /></label><br/>
+      <label>Departamento:
+        <select th:field="*{departamento}">
+          <option th:each="d : ${departamentos}" th:value="${d.id}" th:text="${d.nome}"></option>
+        </select>
+      </label><br/>
+      <button type="submit">Salvar</button>
+    </form>
+  </main>
+</body>
+</html>
