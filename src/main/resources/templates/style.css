@@ -21,14 +21,6 @@ body {
     background-color: rgb(255, 255, 255);
 }
 
-a:active {
-    color: rgb(39, 39, 39);
-}
-
-a:visited {
-    color: rgb(39, 39, 39);
-}
-
 nav {
     display: flex;
     justify-content: left;
@@ -126,7 +118,7 @@ form {
 
 input {
     width: 40dvh;
-    padding: 1dvh;
+    padding: 1.5dvh;
     margin: 1dvh;
     background-color: rgb(253, 253, 253);
     border-radius: 1dvh;
@@ -140,10 +132,6 @@ input:focus {
     color: rgb(102, 102, 102);
     border: 2px solid rgb(150, 150, 150);
     outline: none;
-}
-
-input #selecao-departamento {
-    width: auto;
 }
 
 .bloco-inputs {
@@ -213,36 +201,8 @@ textarea:hover {
     border-radius: 0.5rem;
 }
 
-.buttons:visited {
-    color: white;
-}
-
 #departamento {
     display: flex;
     gap: 20dvh;
     padding-left: 20dvh;
-}
-
-.lista-produtos {
-    display: flex;
-    flex-direction: column;
-    gap: 1dvh;
-}
-
-.lista-produtos ul li {
-    padding: 2dvh 4dvh;
-    border: 1px solid black;
-    border-radius: 0.5rem;
-    margin: 3dvh 0;
-}
-
-.novo {
-    background-color: #0C2833;
-    color: white;
-    padding: 2dvh 4dvh;
-    border-radius: 0.5rem;
-}
-
-.novo:visited {
-    color: white;
 }

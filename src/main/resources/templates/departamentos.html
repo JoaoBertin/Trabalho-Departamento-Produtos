@@ -6,24 +6,29 @@
     <link rel="stylesheet" th:href="@{/styles/style.css}" href="/styles/style.css">
 </head>
 <body>
-  <header><h1>Departamentos</h1><a th:href="@{/}">Home</a></header>
+  <header>
+    <h1>Departamentos</h1>
+    <a th:href="@{/}">Home</a>
+  </header>
   <main>
-    <a th:href="@{/departamentos/novo}">Novo Departamento</a>
-    <table>
-      <thead><tr><th>Nome</th><th>Descrição</th><th>Ações</th></tr></thead>
-      <tbody>
-        <tr th:each="d : ${departamentos}">
-          <td th:text="${d.nome}">Nome</td>
-          <td th:text="${d.descricao}">Descricao</td>
-          <td>
-            <a th:href="@{'/departamentos/editar/' + ${d.id}}">Editar</a>
-            <form th:action="@{'/departamentos/excluir/' + ${d.id}}" method="post" style="display:inline">
-              <button type="submit">Excluir</button>
-            </form>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <section class="tabela">
+      <table>
+        <thead><tr><th>Nome</th><th>Descrição</th><th>Ações</th></tr></thead>
+        <tbody>
+          <tr th:each="d : ${departamentos}">
+            <td th:text="${d.nome}">Nome</td>
+            <td th:text="${d.descricao}">Descricao</td>
+            <td>
+              <a class="buttons" th:href="@{'/departamentos/editar/' + ${d.id}}">Editar</a>
+              <form th:action="@{'/departamentos/excluir/' + ${d.id}}" method="post" style="display:inline">
+                <button class="buttons" type="submit">Excluir</button>
+              </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <a class="novo" th:href="@{/departamentos/novo}">Novo Departamento</a>
   </main>
 </body>
 </html>

@@ -6,18 +6,18 @@
     <link rel="stylesheet" th:href="@{/styles/style.css}" href="/styles/style.css">
 </head>
 <body>
-  <header><h1 th:text="${produto.id} != null ? 'Editar Produto' : 'Novo Produto'">Form</h1><a th:href="@{/produtos}">Voltar</a></header>
+  <header><h1 th:text="${produto.id} != null ? 'Editar Produto' : 'Novo Produto'">Editar Produto</h1><a th:href="@{/produtos}">Voltar</a></header>
   <main>
     <form th:action="@{/produtos/salvar}" th:object="${produto}" method="post">
       <input type="hidden" th:field="*{id}" />
       <label>Nome: <input type="text" th:field="*{nome}" /></label><br/>
       <label>Preço: <input type="number" step="0.01" th:field="*{preco}" /></label><br/>
       <label>Departamento:
-        <select th:field="*{departamento}">
+        <select id="selecao-departamento" th:field="*{departamento}">
           <option th:each="d : ${departamentos}" th:value="${d.id}" th:text="${d.nome}"></option>
         </select>
-      </label><br/>
-      <button type="submit">Salvar</button>
+      </label><br>
+      <button class="submit" type="submit">Salvar</button>
     </form>
   </main>
 </body>
